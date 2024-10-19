@@ -18,7 +18,7 @@ export default function SeeProfile({userName}: SeeProfileProps){
   
   return (
   <div className="w-full flex justify-center">
-          <Button onClick={goToProfile} className="w-full bg-zinc-300 text-black hover:bg-zinc-400 hover:cursor-pointer rounded-md justify-center">
+          <Button onClick={goToProfile} className="w-full flex gap-1 bg-zinc-300 text-black hover:bg-zinc-400 hover:cursor-pointer rounded-md justify-center">
               <UserIcon size={15}/> Perfil
           </Button>
   </div>

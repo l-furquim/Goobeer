@@ -11,7 +11,7 @@ const ExitAccount = () => {
     }
 
     return (
-        <Button onClick={exit} className="bg-zinc-300 text-black hover:bg-zinc-400 w-full">
+        <Button onClick={exit} className="bg-zinc-300 text-black flex gap-1 hover:bg-zinc-400 w-full">
             <ExitIcon/> Sair
         </Button>
     )

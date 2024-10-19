@@ -4,11 +4,8 @@ import CartsContainer from "./_components/carts-container";
 import { getUserDataAndCarts } from "@/lib/api";
 import type { GetServerSidePropsContext } from "next";
 import { useEffect, useState } from "react";
-import type { GetUserCartReponseType, GetUserDataAndCartResponseType } from "@/context/auth-context";
+import type { GetUserCartReponseType} from "@/context/auth-context";
 import FinalizeCart from "./_components/finalize-cart";
-import { Input } from "@/components/ui/input";
-import { Label } from "@radix-ui/react-dropdown-menu";
-import { Button } from "@/components/ui/button";
 import CalculateShip from "./_components/calculate-ship";
 
 const UserCartsPage = (context: GetServerSidePropsContext) => {
@@ -20,8 +17,9 @@ const UserCartsPage = (context: GetServerSidePropsContext) => {
     const response =  await getUserDataAndCarts(context);
     
     if(response){
-      setCarts(response.cartData); 
+      if(response.cartData)setCarts(response.cartData); 
     }
+    console.log(carts);
   }
 
   useEffect(()=> {
@@ -30,7 +28,7 @@ const UserCartsPage = (context: GetServerSidePropsContext) => {
 
   return (
   <>
-    <NavBar/>
+    <NavBar {...context}/>
 
 
     <div className="w-full flex justify-center">
@@ -61,7 +59,7 @@ const UserCartsPage = (context: GetServerSidePropsContext) => {
             <FinalizeCart cartId={carts[0].cartId} totalPrice={carts[0].totalPrice} itemsQuantity={carts[0].totalPrice} />    
           </>
           ): (
-          <p>Carregando seus carrinhos...</p>
+          <p></p>
         )
         }
         </div>

@@ -8,8 +8,11 @@ import qs from "qs";
 import React from "react";
 import { useState } from "react";
 import SeeProfile from "./see-profile";
+import UserCart from "./user-cart";
+import type { GetUserDataResponseType } from "@/app/view/user/[user]/page";
+import UserFavorites from "./user-favorites";
 
-export const UserData = () => {
+export const UserData = ({userName}: GetUserDataResponseType) => {
 
     const router = useRouter();
 
@@ -41,18 +44,24 @@ export const UserData = () => {
       <div onClick={onClickUser} className="flex flex-row gap-2 hover:opacity-75 transition hover:cursor-pointer">
       
       <DropdownMenu>
-          <DropdownMenuTrigger className="flex flex-row gap-2">Lucas<UserCircleIcon className="mt-[0.5px]"/> </DropdownMenuTrigger>
+          <DropdownMenuTrigger className="flex flex-row gap-2">{userName}<UserCircleIcon className="mt-[0.5px]"/> </DropdownMenuTrigger>
       
             <DropdownMenuContent>
               <DropdownMenuLabel>Minha conta</DropdownMenuLabel>
                 <DropdownMenuSeparator />
                 
                     <DropdownMenuItem>
-                      <SeeProfile userName={value}/>
+                      <SeeProfile userName={userName}/>
                     </DropdownMenuItem>
-                  <DropdownMenuItem className="font-semibold">
-                    <ExitAccount/>
-                  </DropdownMenuItem>
+                    <DropdownMenuItem>
+                      <UserCart userName={userName}/>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem>
+                      <UserFavorites/>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem className="font-semibold">
+                      <ExitAccount/>
+                    </DropdownMenuItem>
              </DropdownMenuContent>
         </DropdownMenu>
 
