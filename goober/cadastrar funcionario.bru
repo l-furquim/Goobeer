@@ -1,0 +1,22 @@
+meta {
+  name: cadastrar funcionario
+  type: http
+  seq: 19
+}
+
+post {
+  url: http://localhost:3333/usuarios/cadastrar
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "nome": "Lucas",
+    "email":"lucashernandes@gmail.com",
+    "senha": "Ishow123",
+    "idEmpresa": 1,
+    "idFazenda": 1,
+    "idSupervisor": null
+  }
+}

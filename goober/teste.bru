@@ -1,0 +1,19 @@
+meta {
+  name: teste
+  type: http
+  seq: 5
+}
+
+post {
+  url: http://localhost:3333/maculados/cadastrar
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "nome": "lucas",
+    "email": "lucas@gmail.com",
+    "senha": "123123"
+  }
+}

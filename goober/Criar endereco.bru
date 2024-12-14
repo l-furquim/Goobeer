@@ -1,0 +1,22 @@
+meta {
+  name: Criar endereco
+  type: http
+  seq: 20
+}
+
+post {
+  url: http://localhost:3333/enderecos/cadastrar
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "cep": "091823123",
+    "cidade":"SAO CAETANO",
+    "estado": "SP",
+    "logradouro": "Rua silvia",
+    "numero": "1603",
+    "complemento": "AP 54"
+  }
+}

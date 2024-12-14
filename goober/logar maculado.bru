@@ -1,0 +1,18 @@
+meta {
+  name: logar maculado
+  type: http
+  seq: 10
+}
+
+post {
+  url: http://localhost:3333/maculados/autenticar
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "email": "lucas@gmail.com",
+    "senha": "123123"
+  }
+}

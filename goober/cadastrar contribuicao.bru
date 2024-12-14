@@ -1,0 +1,21 @@
+meta {
+  name: cadastrar contribuicao
+  type: http
+  seq: 6
+}
+
+post {
+  url: http://localhost:3333/contribuicao/cadastrar
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "conteudo": "Gente da o rabo ai...",
+    "tipo": "Dica",
+    "fkMaculado": 1,
+    "tag": "Bosses",
+    "conteudoTag": "Raddan"
+  }
+}

@@ -1,0 +1,22 @@
+meta {
+  name: Cadastrar usuario
+  type: http
+  seq: 16
+}
+
+post {
+  url: http://localhost:3333/usuarios/cadastrar
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "nome": "Lucas", 
+    "email": "lucas@gmail.com", 
+    "senha": "ishow123", 
+    "idEmpresa": 1, 
+    "idFazenda" : 1,
+    "idSupervisor": null
+  }
+}

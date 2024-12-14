@@ -1,0 +1,17 @@
+meta {
+  name: Buscar contribuicao pelo conteudo
+  type: http
+  seq: 14
+}
+
+post {
+  url: http://localhost:3333/contribuicao/buscar/tipo=celebrar&tag=0&conteudoTag=0
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "conteudo": ""
+  }
+}
